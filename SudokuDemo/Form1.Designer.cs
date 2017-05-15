@@ -31,6 +31,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.游戏ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.开始ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.初级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.中级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.高级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重新开始ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.暂停ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -125,9 +128,7 @@
             this.textBox80 = new System.Windows.Forms.TextBox();
             this.textBox81 = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.初级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.中级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.高级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.检验ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -158,7 +159,8 @@
             this.游戏ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.开始ToolStripMenuItem,
             this.重新开始ToolStripMenuItem,
-            this.暂停ToolStripMenuItem});
+            this.暂停ToolStripMenuItem,
+            this.检验ToolStripMenuItem});
             this.游戏ToolStripMenuItem.Name = "游戏ToolStripMenuItem";
             this.游戏ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.游戏ToolStripMenuItem.Text = "游戏";
@@ -173,11 +175,33 @@
             this.开始ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.开始ToolStripMenuItem.Text = "开始";
             // 
+            // 初级ToolStripMenuItem
+            // 
+            this.初级ToolStripMenuItem.Name = "初级ToolStripMenuItem";
+            this.初级ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.初级ToolStripMenuItem.Text = "初级";
+            this.初级ToolStripMenuItem.Click += new System.EventHandler(this.初级ToolStripMenuItem_Click);
+            // 
+            // 中级ToolStripMenuItem
+            // 
+            this.中级ToolStripMenuItem.Name = "中级ToolStripMenuItem";
+            this.中级ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.中级ToolStripMenuItem.Text = "中级";
+            this.中级ToolStripMenuItem.Click += new System.EventHandler(this.中级ToolStripMenuItem_Click);
+            // 
+            // 高级ToolStripMenuItem
+            // 
+            this.高级ToolStripMenuItem.Name = "高级ToolStripMenuItem";
+            this.高级ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.高级ToolStripMenuItem.Text = "高级";
+            this.高级ToolStripMenuItem.Click += new System.EventHandler(this.高级ToolStripMenuItem_Click);
+            // 
             // 重新开始ToolStripMenuItem
             // 
             this.重新开始ToolStripMenuItem.Name = "重新开始ToolStripMenuItem";
             this.重新开始ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.重新开始ToolStripMenuItem.Text = "重新开始";
+            this.重新开始ToolStripMenuItem.Click += new System.EventHandler(this.重新开始ToolStripMenuItem_Click);
             // 
             // 暂停ToolStripMenuItem
             // 
@@ -1343,23 +1367,12 @@
             this.panel10.Size = new System.Drawing.Size(472, 465);
             this.panel10.TabIndex = 11;
             // 
-            // 初级ToolStripMenuItem
+            // 检验ToolStripMenuItem
             // 
-            this.初级ToolStripMenuItem.Name = "初级ToolStripMenuItem";
-            this.初级ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.初级ToolStripMenuItem.Text = "初级";
-            // 
-            // 中级ToolStripMenuItem
-            // 
-            this.中级ToolStripMenuItem.Name = "中级ToolStripMenuItem";
-            this.中级ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.中级ToolStripMenuItem.Text = "中级";
-            // 
-            // 高级ToolStripMenuItem
-            // 
-            this.高级ToolStripMenuItem.Name = "高级ToolStripMenuItem";
-            this.高级ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.高级ToolStripMenuItem.Text = "高级";
+            this.检验ToolStripMenuItem.Name = "检验ToolStripMenuItem";
+            this.检验ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.检验ToolStripMenuItem.Text = "检验";
+            this.检验ToolStripMenuItem.Click += new System.EventHandler(this.检验ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1502,6 +1515,7 @@
         private System.Windows.Forms.ToolStripMenuItem 初级ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 中级ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 高级ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 检验ToolStripMenuItem;
     }
 }
 

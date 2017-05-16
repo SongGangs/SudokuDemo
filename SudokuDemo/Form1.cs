@@ -116,7 +116,6 @@ namespace SudokuDemo
                     if (array[i, j] != 0)
                     {
                         textBox.Text = array[i, j].ToString();
-                        //textBox.ReadOnly = true;
                         textBox.Enabled = false;
                     }
                 }
@@ -124,36 +123,6 @@ namespace SudokuDemo
         }
 
      
-        /// <summary>
-        /// 使用回溯算法求解
-        /// </summary>
-        /// <param name="n"></param>
-        private void GetAnswer(int n,int[,]array)
-        {
-            if (n == 81)
-            {//是否已经是最后一个格子
-                Show();
-                return;
-            }
-
-            int i = n / 9, j = n % 9;
-
-            if (array[i, j] != 0)
-            {//如果当前格子不需要填数字，就跳到下一个格子
-                GetAnswer(n + 1,array);
-                return;
-            }
-
-            for (int k = 0; k < 9; k++)
-            {
-                array[i, j]++;//当前格子进行尝试所有解
-                if (IsValid(i, j,array))
-                    GetAnswer(n + 1,array);//验证通过，就继续下一个
-            }
-
-            array[i, j] = 0;  //如果上面的单元无解，还原，就回溯
-            return;
-        }
 
         /// <summary>
         /// 生成一些空位的数组
@@ -172,6 +141,38 @@ namespace SudokuDemo
                     array[k/9, k%9] = 0;
             }
             return array;
+        }
+
+
+        /// <summary>
+        /// 使用回溯算法求解
+        /// </summary>
+        /// <param name="n"></param>
+        private void GetAnswer(int n, int[,] array)
+        {
+            if (n == 81)
+            {//是否已经是最后一个格子
+                //Show();
+                return;
+            }
+
+            int i = n / 9, j = n % 9;
+
+            if (array[i, j] != 0)
+            {//如果当前格子不需要填数字，就跳到下一个格子
+                GetAnswer(n + 1, array);
+                return;
+            }
+
+            for (int k = 0; k < 9; k++)
+            {
+                array[i, j]++;//当前格子进行尝试所有解
+                if (IsValid(i, j, array))
+                    GetAnswer(n + 1, array);//验证通过，就继续下一个
+            }
+
+            array[i, j] = 0;  //如果上面的单元无解，还原，就回溯
+            return;
         }
 
         /// <summary>
@@ -202,33 +203,105 @@ namespace SudokuDemo
                 }
             }
             return true;
-
         }
 
+        private int[,] GetArrayFromSceen(int[,]array)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (array[i,j]==0)
+                    {
+                        TextBox textBox = this.panel10.Controls[8 - i].Controls[j] as TextBox;
+                        try
+                        {
+                            array[i, j] = int.Parse(textBox.Text);
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
+                }   
+            }
+            return array;
+        }
         private void 初级ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RandomNull = 25;
+            SudoNull = GetOrginArray(Generate9Array(Generate3Aaary()));
+            ShowResultInSceen(SudoNull);
         }
 
         private void 中级ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RandomNull = 36;
+            SudoNull = GetOrginArray(Generate9Array(Generate3Aaary()));
+            ShowResultInSceen(SudoNull);
         }
 
         private void 高级ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RandomNull = 64;
-        }
-
-        private void 检验ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            GetAnswer(0, SudoNull);
+            SudoNull = GetOrginArray(Generate9Array(Generate3Aaary()));
+            ShowResultInSceen(SudoNull);
         }
 
         private void 重新开始ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SudoNull = GetOrginArray(Generate9Array(Generate3Aaary()));
             ShowResultInSceen(SudoNull);
+            startTimer();
+        }
+
+    
+        private void startTimer()
+        {
+            this.label1.Text = "000";
+            this.timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int k = Int32.Parse(this.label1.Text);
+            k++;
+            this.label1.Text = k.ToString("D3");
+        }
+
+        private void btn_pause_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled)
+            {
+                (sender as Button).Text = "继续";
+                this.timer1.Enabled = false;
+                this.panel10.Enabled = false;
+            }
+            else
+            {
+                (sender as Button).Text = "暂停";
+                this.timer1.Enabled = true;
+                this.panel10.Enabled = true;
+            }
+        }
+
+        private void btn_check_Click(object sender, EventArgs e)
+        {
+            this.timer1.Enabled = false;
+            int[,] array = GetArrayFromSceen(SudoNull);
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (!IsValid(i, j, array))
+                    {
+                        MessageBox.Show("对不起，你失败了，请检查");
+                        this.timer1.Enabled = true;
+                        return;
+                    }
+                }
+            }
+            MessageBox.Show("你真厉害   用时："+this.label1.Text+"s");
+            // GetAnswer(0, SudoNull);
         }
     }
 }

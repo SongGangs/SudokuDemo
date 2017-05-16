@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.游戏ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.开始ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,7 +36,6 @@
             this.中级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.高级ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重新开始ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.暂停ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -128,7 +128,11 @@
             this.textBox80 = new System.Windows.Forms.TextBox();
             this.textBox81 = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.检验ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_pause = new System.Windows.Forms.Button();
+            this.btn_check = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -140,6 +144,7 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -158,9 +163,7 @@
             // 
             this.游戏ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.开始ToolStripMenuItem,
-            this.重新开始ToolStripMenuItem,
-            this.暂停ToolStripMenuItem,
-            this.检验ToolStripMenuItem});
+            this.重新开始ToolStripMenuItem});
             this.游戏ToolStripMenuItem.Name = "游戏ToolStripMenuItem";
             this.游戏ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.游戏ToolStripMenuItem.Text = "游戏";
@@ -203,12 +206,6 @@
             this.重新开始ToolStripMenuItem.Text = "重新开始";
             this.重新开始ToolStripMenuItem.Click += new System.EventHandler(this.重新开始ToolStripMenuItem_Click);
             // 
-            // 暂停ToolStripMenuItem
-            // 
-            this.暂停ToolStripMenuItem.Name = "暂停ToolStripMenuItem";
-            this.暂停ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.暂停ToolStripMenuItem.Text = "暂停";
-            // 
             // 帮助ToolStripMenuItem
             // 
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
@@ -221,6 +218,7 @@
             this.textBox1.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox1.ForeColor = System.Drawing.Color.Red;
             this.textBox1.Location = new System.Drawing.Point(403, 0);
+            this.textBox1.MaxLength = 1;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(50, 50);
             this.textBox1.TabIndex = 1;
@@ -251,6 +249,7 @@
             this.textBox2.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox2.ForeColor = System.Drawing.Color.Red;
             this.textBox2.Location = new System.Drawing.Point(353, 0);
+            this.textBox2.MaxLength = 1;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(50, 50);
             this.textBox2.TabIndex = 2;
@@ -263,6 +262,7 @@
             this.textBox3.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox3.ForeColor = System.Drawing.Color.Red;
             this.textBox3.Location = new System.Drawing.Point(303, 0);
+            this.textBox3.MaxLength = 1;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(50, 50);
             this.textBox3.TabIndex = 3;
@@ -275,6 +275,7 @@
             this.textBox4.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox4.ForeColor = System.Drawing.Color.Red;
             this.textBox4.Location = new System.Drawing.Point(253, 0);
+            this.textBox4.MaxLength = 1;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(50, 50);
             this.textBox4.TabIndex = 4;
@@ -287,6 +288,7 @@
             this.textBox5.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox5.ForeColor = System.Drawing.Color.Red;
             this.textBox5.Location = new System.Drawing.Point(203, 0);
+            this.textBox5.MaxLength = 1;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(50, 50);
             this.textBox5.TabIndex = 5;
@@ -299,6 +301,7 @@
             this.textBox6.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox6.ForeColor = System.Drawing.Color.Red;
             this.textBox6.Location = new System.Drawing.Point(153, 0);
+            this.textBox6.MaxLength = 1;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(50, 50);
             this.textBox6.TabIndex = 6;
@@ -311,6 +314,7 @@
             this.textBox7.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox7.ForeColor = System.Drawing.Color.Red;
             this.textBox7.Location = new System.Drawing.Point(103, 0);
+            this.textBox7.MaxLength = 1;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(50, 50);
             this.textBox7.TabIndex = 7;
@@ -323,6 +327,7 @@
             this.textBox8.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox8.ForeColor = System.Drawing.Color.Red;
             this.textBox8.Location = new System.Drawing.Point(53, 0);
+            this.textBox8.MaxLength = 1;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(50, 50);
             this.textBox8.TabIndex = 8;
@@ -335,6 +340,7 @@
             this.textBox9.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox9.ForeColor = System.Drawing.Color.Red;
             this.textBox9.Location = new System.Drawing.Point(3, 0);
+            this.textBox9.MaxLength = 1;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(50, 50);
             this.textBox9.TabIndex = 9;
@@ -365,6 +371,7 @@
             this.textBox10.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox10.ForeColor = System.Drawing.Color.Red;
             this.textBox10.Location = new System.Drawing.Point(403, 0);
+            this.textBox10.MaxLength = 1;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(50, 50);
             this.textBox10.TabIndex = 1;
@@ -377,6 +384,7 @@
             this.textBox11.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox11.ForeColor = System.Drawing.Color.Red;
             this.textBox11.Location = new System.Drawing.Point(353, 0);
+            this.textBox11.MaxLength = 1;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(50, 50);
             this.textBox11.TabIndex = 2;
@@ -389,6 +397,7 @@
             this.textBox12.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox12.ForeColor = System.Drawing.Color.Red;
             this.textBox12.Location = new System.Drawing.Point(303, 0);
+            this.textBox12.MaxLength = 1;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(50, 50);
             this.textBox12.TabIndex = 3;
@@ -401,6 +410,7 @@
             this.textBox13.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox13.ForeColor = System.Drawing.Color.Red;
             this.textBox13.Location = new System.Drawing.Point(253, 0);
+            this.textBox13.MaxLength = 1;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(50, 50);
             this.textBox13.TabIndex = 4;
@@ -413,6 +423,7 @@
             this.textBox14.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox14.ForeColor = System.Drawing.Color.Red;
             this.textBox14.Location = new System.Drawing.Point(203, 0);
+            this.textBox14.MaxLength = 1;
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(50, 50);
             this.textBox14.TabIndex = 5;
@@ -425,6 +436,7 @@
             this.textBox15.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox15.ForeColor = System.Drawing.Color.Red;
             this.textBox15.Location = new System.Drawing.Point(153, 0);
+            this.textBox15.MaxLength = 1;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(50, 50);
             this.textBox15.TabIndex = 6;
@@ -437,6 +449,7 @@
             this.textBox16.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox16.ForeColor = System.Drawing.Color.Red;
             this.textBox16.Location = new System.Drawing.Point(103, 0);
+            this.textBox16.MaxLength = 1;
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(50, 50);
             this.textBox16.TabIndex = 7;
@@ -449,6 +462,7 @@
             this.textBox17.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox17.ForeColor = System.Drawing.Color.Red;
             this.textBox17.Location = new System.Drawing.Point(53, 0);
+            this.textBox17.MaxLength = 1;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(50, 50);
             this.textBox17.TabIndex = 8;
@@ -461,6 +475,7 @@
             this.textBox18.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox18.ForeColor = System.Drawing.Color.Red;
             this.textBox18.Location = new System.Drawing.Point(3, 0);
+            this.textBox18.MaxLength = 1;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(50, 50);
             this.textBox18.TabIndex = 9;
@@ -491,6 +506,7 @@
             this.textBox19.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox19.ForeColor = System.Drawing.Color.Red;
             this.textBox19.Location = new System.Drawing.Point(403, 0);
+            this.textBox19.MaxLength = 1;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(50, 50);
             this.textBox19.TabIndex = 1;
@@ -503,6 +519,7 @@
             this.textBox20.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox20.ForeColor = System.Drawing.Color.Red;
             this.textBox20.Location = new System.Drawing.Point(353, 0);
+            this.textBox20.MaxLength = 1;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(50, 50);
             this.textBox20.TabIndex = 2;
@@ -515,6 +532,7 @@
             this.textBox21.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox21.ForeColor = System.Drawing.Color.Red;
             this.textBox21.Location = new System.Drawing.Point(303, 0);
+            this.textBox21.MaxLength = 1;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(50, 50);
             this.textBox21.TabIndex = 3;
@@ -527,6 +545,7 @@
             this.textBox22.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox22.ForeColor = System.Drawing.Color.Red;
             this.textBox22.Location = new System.Drawing.Point(253, 0);
+            this.textBox22.MaxLength = 1;
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(50, 50);
             this.textBox22.TabIndex = 4;
@@ -539,6 +558,7 @@
             this.textBox23.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox23.ForeColor = System.Drawing.Color.Red;
             this.textBox23.Location = new System.Drawing.Point(203, 0);
+            this.textBox23.MaxLength = 1;
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(50, 50);
             this.textBox23.TabIndex = 5;
@@ -551,6 +571,7 @@
             this.textBox24.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox24.ForeColor = System.Drawing.Color.Red;
             this.textBox24.Location = new System.Drawing.Point(153, 0);
+            this.textBox24.MaxLength = 1;
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(50, 50);
             this.textBox24.TabIndex = 6;
@@ -563,6 +584,7 @@
             this.textBox25.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox25.ForeColor = System.Drawing.Color.Red;
             this.textBox25.Location = new System.Drawing.Point(103, 0);
+            this.textBox25.MaxLength = 1;
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(50, 50);
             this.textBox25.TabIndex = 7;
@@ -575,6 +597,7 @@
             this.textBox26.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox26.ForeColor = System.Drawing.Color.Red;
             this.textBox26.Location = new System.Drawing.Point(53, 0);
+            this.textBox26.MaxLength = 1;
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(50, 50);
             this.textBox26.TabIndex = 8;
@@ -587,6 +610,7 @@
             this.textBox27.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox27.ForeColor = System.Drawing.Color.Red;
             this.textBox27.Location = new System.Drawing.Point(3, 0);
+            this.textBox27.MaxLength = 1;
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(50, 50);
             this.textBox27.TabIndex = 9;
@@ -617,6 +641,7 @@
             this.textBox28.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox28.ForeColor = System.Drawing.Color.Red;
             this.textBox28.Location = new System.Drawing.Point(403, 0);
+            this.textBox28.MaxLength = 1;
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(50, 50);
             this.textBox28.TabIndex = 1;
@@ -629,6 +654,7 @@
             this.textBox29.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox29.ForeColor = System.Drawing.Color.Red;
             this.textBox29.Location = new System.Drawing.Point(353, 0);
+            this.textBox29.MaxLength = 1;
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(50, 50);
             this.textBox29.TabIndex = 2;
@@ -641,6 +667,7 @@
             this.textBox30.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox30.ForeColor = System.Drawing.Color.Red;
             this.textBox30.Location = new System.Drawing.Point(303, 0);
+            this.textBox30.MaxLength = 1;
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(50, 50);
             this.textBox30.TabIndex = 3;
@@ -653,6 +680,7 @@
             this.textBox31.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox31.ForeColor = System.Drawing.Color.Red;
             this.textBox31.Location = new System.Drawing.Point(253, 0);
+            this.textBox31.MaxLength = 1;
             this.textBox31.Name = "textBox31";
             this.textBox31.Size = new System.Drawing.Size(50, 50);
             this.textBox31.TabIndex = 4;
@@ -665,6 +693,7 @@
             this.textBox32.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox32.ForeColor = System.Drawing.Color.Red;
             this.textBox32.Location = new System.Drawing.Point(203, 0);
+            this.textBox32.MaxLength = 1;
             this.textBox32.Name = "textBox32";
             this.textBox32.Size = new System.Drawing.Size(50, 50);
             this.textBox32.TabIndex = 5;
@@ -677,6 +706,7 @@
             this.textBox33.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox33.ForeColor = System.Drawing.Color.Red;
             this.textBox33.Location = new System.Drawing.Point(153, 0);
+            this.textBox33.MaxLength = 1;
             this.textBox33.Name = "textBox33";
             this.textBox33.Size = new System.Drawing.Size(50, 50);
             this.textBox33.TabIndex = 6;
@@ -689,6 +719,7 @@
             this.textBox34.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox34.ForeColor = System.Drawing.Color.Red;
             this.textBox34.Location = new System.Drawing.Point(103, 0);
+            this.textBox34.MaxLength = 1;
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(50, 50);
             this.textBox34.TabIndex = 7;
@@ -701,6 +732,7 @@
             this.textBox35.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox35.ForeColor = System.Drawing.Color.Red;
             this.textBox35.Location = new System.Drawing.Point(53, 0);
+            this.textBox35.MaxLength = 1;
             this.textBox35.Name = "textBox35";
             this.textBox35.Size = new System.Drawing.Size(50, 50);
             this.textBox35.TabIndex = 8;
@@ -713,6 +745,7 @@
             this.textBox36.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox36.ForeColor = System.Drawing.Color.Red;
             this.textBox36.Location = new System.Drawing.Point(3, 0);
+            this.textBox36.MaxLength = 1;
             this.textBox36.Name = "textBox36";
             this.textBox36.Size = new System.Drawing.Size(50, 50);
             this.textBox36.TabIndex = 9;
@@ -743,6 +776,7 @@
             this.textBox37.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox37.ForeColor = System.Drawing.Color.Red;
             this.textBox37.Location = new System.Drawing.Point(403, 0);
+            this.textBox37.MaxLength = 1;
             this.textBox37.Name = "textBox37";
             this.textBox37.Size = new System.Drawing.Size(50, 50);
             this.textBox37.TabIndex = 1;
@@ -755,6 +789,7 @@
             this.textBox38.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox38.ForeColor = System.Drawing.Color.Red;
             this.textBox38.Location = new System.Drawing.Point(353, 0);
+            this.textBox38.MaxLength = 1;
             this.textBox38.Name = "textBox38";
             this.textBox38.Size = new System.Drawing.Size(50, 50);
             this.textBox38.TabIndex = 2;
@@ -767,6 +802,7 @@
             this.textBox39.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox39.ForeColor = System.Drawing.Color.Red;
             this.textBox39.Location = new System.Drawing.Point(303, 0);
+            this.textBox39.MaxLength = 1;
             this.textBox39.Name = "textBox39";
             this.textBox39.Size = new System.Drawing.Size(50, 50);
             this.textBox39.TabIndex = 3;
@@ -779,6 +815,7 @@
             this.textBox40.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox40.ForeColor = System.Drawing.Color.Red;
             this.textBox40.Location = new System.Drawing.Point(253, 0);
+            this.textBox40.MaxLength = 1;
             this.textBox40.Name = "textBox40";
             this.textBox40.Size = new System.Drawing.Size(50, 50);
             this.textBox40.TabIndex = 4;
@@ -791,6 +828,7 @@
             this.textBox41.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox41.ForeColor = System.Drawing.Color.Red;
             this.textBox41.Location = new System.Drawing.Point(203, 0);
+            this.textBox41.MaxLength = 1;
             this.textBox41.Name = "textBox41";
             this.textBox41.Size = new System.Drawing.Size(50, 50);
             this.textBox41.TabIndex = 5;
@@ -803,6 +841,7 @@
             this.textBox42.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox42.ForeColor = System.Drawing.Color.Red;
             this.textBox42.Location = new System.Drawing.Point(153, 0);
+            this.textBox42.MaxLength = 1;
             this.textBox42.Name = "textBox42";
             this.textBox42.Size = new System.Drawing.Size(50, 50);
             this.textBox42.TabIndex = 6;
@@ -815,6 +854,7 @@
             this.textBox43.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox43.ForeColor = System.Drawing.Color.Red;
             this.textBox43.Location = new System.Drawing.Point(103, 0);
+            this.textBox43.MaxLength = 1;
             this.textBox43.Name = "textBox43";
             this.textBox43.Size = new System.Drawing.Size(50, 50);
             this.textBox43.TabIndex = 7;
@@ -827,6 +867,7 @@
             this.textBox44.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox44.ForeColor = System.Drawing.Color.Red;
             this.textBox44.Location = new System.Drawing.Point(53, 0);
+            this.textBox44.MaxLength = 1;
             this.textBox44.Name = "textBox44";
             this.textBox44.Size = new System.Drawing.Size(50, 50);
             this.textBox44.TabIndex = 8;
@@ -839,6 +880,7 @@
             this.textBox45.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox45.ForeColor = System.Drawing.Color.Red;
             this.textBox45.Location = new System.Drawing.Point(3, 0);
+            this.textBox45.MaxLength = 1;
             this.textBox45.Name = "textBox45";
             this.textBox45.Size = new System.Drawing.Size(50, 50);
             this.textBox45.TabIndex = 9;
@@ -869,6 +911,7 @@
             this.textBox46.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox46.ForeColor = System.Drawing.Color.Red;
             this.textBox46.Location = new System.Drawing.Point(403, 0);
+            this.textBox46.MaxLength = 1;
             this.textBox46.Name = "textBox46";
             this.textBox46.Size = new System.Drawing.Size(50, 50);
             this.textBox46.TabIndex = 1;
@@ -881,6 +924,7 @@
             this.textBox47.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox47.ForeColor = System.Drawing.Color.Red;
             this.textBox47.Location = new System.Drawing.Point(353, 0);
+            this.textBox47.MaxLength = 1;
             this.textBox47.Name = "textBox47";
             this.textBox47.Size = new System.Drawing.Size(50, 50);
             this.textBox47.TabIndex = 2;
@@ -893,6 +937,7 @@
             this.textBox48.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox48.ForeColor = System.Drawing.Color.Red;
             this.textBox48.Location = new System.Drawing.Point(303, 0);
+            this.textBox48.MaxLength = 1;
             this.textBox48.Name = "textBox48";
             this.textBox48.Size = new System.Drawing.Size(50, 50);
             this.textBox48.TabIndex = 3;
@@ -905,6 +950,7 @@
             this.textBox49.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox49.ForeColor = System.Drawing.Color.Red;
             this.textBox49.Location = new System.Drawing.Point(253, 0);
+            this.textBox49.MaxLength = 1;
             this.textBox49.Name = "textBox49";
             this.textBox49.Size = new System.Drawing.Size(50, 50);
             this.textBox49.TabIndex = 4;
@@ -917,6 +963,7 @@
             this.textBox50.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox50.ForeColor = System.Drawing.Color.Red;
             this.textBox50.Location = new System.Drawing.Point(203, 0);
+            this.textBox50.MaxLength = 1;
             this.textBox50.Name = "textBox50";
             this.textBox50.Size = new System.Drawing.Size(50, 50);
             this.textBox50.TabIndex = 5;
@@ -929,6 +976,7 @@
             this.textBox51.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox51.ForeColor = System.Drawing.Color.Red;
             this.textBox51.Location = new System.Drawing.Point(153, 0);
+            this.textBox51.MaxLength = 1;
             this.textBox51.Name = "textBox51";
             this.textBox51.Size = new System.Drawing.Size(50, 50);
             this.textBox51.TabIndex = 6;
@@ -941,6 +989,7 @@
             this.textBox52.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox52.ForeColor = System.Drawing.Color.Red;
             this.textBox52.Location = new System.Drawing.Point(103, 0);
+            this.textBox52.MaxLength = 1;
             this.textBox52.Name = "textBox52";
             this.textBox52.Size = new System.Drawing.Size(50, 50);
             this.textBox52.TabIndex = 7;
@@ -953,6 +1002,7 @@
             this.textBox53.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox53.ForeColor = System.Drawing.Color.Red;
             this.textBox53.Location = new System.Drawing.Point(53, 0);
+            this.textBox53.MaxLength = 1;
             this.textBox53.Name = "textBox53";
             this.textBox53.Size = new System.Drawing.Size(50, 50);
             this.textBox53.TabIndex = 8;
@@ -965,6 +1015,7 @@
             this.textBox54.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox54.ForeColor = System.Drawing.Color.Red;
             this.textBox54.Location = new System.Drawing.Point(3, 0);
+            this.textBox54.MaxLength = 1;
             this.textBox54.Name = "textBox54";
             this.textBox54.Size = new System.Drawing.Size(50, 50);
             this.textBox54.TabIndex = 9;
@@ -995,6 +1046,7 @@
             this.textBox55.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox55.ForeColor = System.Drawing.Color.Red;
             this.textBox55.Location = new System.Drawing.Point(403, 0);
+            this.textBox55.MaxLength = 1;
             this.textBox55.Name = "textBox55";
             this.textBox55.Size = new System.Drawing.Size(50, 50);
             this.textBox55.TabIndex = 1;
@@ -1007,6 +1059,7 @@
             this.textBox56.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox56.ForeColor = System.Drawing.Color.Red;
             this.textBox56.Location = new System.Drawing.Point(353, 0);
+            this.textBox56.MaxLength = 1;
             this.textBox56.Name = "textBox56";
             this.textBox56.Size = new System.Drawing.Size(50, 50);
             this.textBox56.TabIndex = 2;
@@ -1019,6 +1072,7 @@
             this.textBox57.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox57.ForeColor = System.Drawing.Color.Red;
             this.textBox57.Location = new System.Drawing.Point(303, 0);
+            this.textBox57.MaxLength = 1;
             this.textBox57.Name = "textBox57";
             this.textBox57.Size = new System.Drawing.Size(50, 50);
             this.textBox57.TabIndex = 3;
@@ -1031,6 +1085,7 @@
             this.textBox58.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox58.ForeColor = System.Drawing.Color.Red;
             this.textBox58.Location = new System.Drawing.Point(253, 0);
+            this.textBox58.MaxLength = 1;
             this.textBox58.Name = "textBox58";
             this.textBox58.Size = new System.Drawing.Size(50, 50);
             this.textBox58.TabIndex = 4;
@@ -1043,6 +1098,7 @@
             this.textBox59.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox59.ForeColor = System.Drawing.Color.Red;
             this.textBox59.Location = new System.Drawing.Point(203, 0);
+            this.textBox59.MaxLength = 1;
             this.textBox59.Name = "textBox59";
             this.textBox59.Size = new System.Drawing.Size(50, 50);
             this.textBox59.TabIndex = 5;
@@ -1055,6 +1111,7 @@
             this.textBox60.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox60.ForeColor = System.Drawing.Color.Red;
             this.textBox60.Location = new System.Drawing.Point(153, 0);
+            this.textBox60.MaxLength = 1;
             this.textBox60.Name = "textBox60";
             this.textBox60.Size = new System.Drawing.Size(50, 50);
             this.textBox60.TabIndex = 6;
@@ -1067,6 +1124,7 @@
             this.textBox61.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox61.ForeColor = System.Drawing.Color.Red;
             this.textBox61.Location = new System.Drawing.Point(103, 0);
+            this.textBox61.MaxLength = 1;
             this.textBox61.Name = "textBox61";
             this.textBox61.Size = new System.Drawing.Size(50, 50);
             this.textBox61.TabIndex = 7;
@@ -1079,6 +1137,7 @@
             this.textBox62.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox62.ForeColor = System.Drawing.Color.Red;
             this.textBox62.Location = new System.Drawing.Point(53, 0);
+            this.textBox62.MaxLength = 1;
             this.textBox62.Name = "textBox62";
             this.textBox62.Size = new System.Drawing.Size(50, 50);
             this.textBox62.TabIndex = 8;
@@ -1091,6 +1150,7 @@
             this.textBox63.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox63.ForeColor = System.Drawing.Color.Red;
             this.textBox63.Location = new System.Drawing.Point(3, 0);
+            this.textBox63.MaxLength = 1;
             this.textBox63.Name = "textBox63";
             this.textBox63.Size = new System.Drawing.Size(50, 50);
             this.textBox63.TabIndex = 9;
@@ -1121,6 +1181,7 @@
             this.textBox64.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox64.ForeColor = System.Drawing.Color.Red;
             this.textBox64.Location = new System.Drawing.Point(403, 0);
+            this.textBox64.MaxLength = 1;
             this.textBox64.Name = "textBox64";
             this.textBox64.Size = new System.Drawing.Size(50, 50);
             this.textBox64.TabIndex = 1;
@@ -1133,6 +1194,7 @@
             this.textBox65.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox65.ForeColor = System.Drawing.Color.Red;
             this.textBox65.Location = new System.Drawing.Point(353, 0);
+            this.textBox65.MaxLength = 1;
             this.textBox65.Name = "textBox65";
             this.textBox65.Size = new System.Drawing.Size(50, 50);
             this.textBox65.TabIndex = 2;
@@ -1145,6 +1207,7 @@
             this.textBox66.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox66.ForeColor = System.Drawing.Color.Red;
             this.textBox66.Location = new System.Drawing.Point(303, 0);
+            this.textBox66.MaxLength = 1;
             this.textBox66.Name = "textBox66";
             this.textBox66.Size = new System.Drawing.Size(50, 50);
             this.textBox66.TabIndex = 3;
@@ -1157,6 +1220,7 @@
             this.textBox67.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox67.ForeColor = System.Drawing.Color.Red;
             this.textBox67.Location = new System.Drawing.Point(253, 0);
+            this.textBox67.MaxLength = 1;
             this.textBox67.Name = "textBox67";
             this.textBox67.Size = new System.Drawing.Size(50, 50);
             this.textBox67.TabIndex = 4;
@@ -1169,6 +1233,7 @@
             this.textBox68.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox68.ForeColor = System.Drawing.Color.Red;
             this.textBox68.Location = new System.Drawing.Point(203, 0);
+            this.textBox68.MaxLength = 1;
             this.textBox68.Name = "textBox68";
             this.textBox68.Size = new System.Drawing.Size(50, 50);
             this.textBox68.TabIndex = 5;
@@ -1181,6 +1246,7 @@
             this.textBox69.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox69.ForeColor = System.Drawing.Color.Red;
             this.textBox69.Location = new System.Drawing.Point(153, 0);
+            this.textBox69.MaxLength = 1;
             this.textBox69.Name = "textBox69";
             this.textBox69.Size = new System.Drawing.Size(50, 50);
             this.textBox69.TabIndex = 6;
@@ -1193,6 +1259,7 @@
             this.textBox70.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox70.ForeColor = System.Drawing.Color.Red;
             this.textBox70.Location = new System.Drawing.Point(103, 0);
+            this.textBox70.MaxLength = 1;
             this.textBox70.Name = "textBox70";
             this.textBox70.Size = new System.Drawing.Size(50, 50);
             this.textBox70.TabIndex = 7;
@@ -1205,6 +1272,7 @@
             this.textBox71.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox71.ForeColor = System.Drawing.Color.Red;
             this.textBox71.Location = new System.Drawing.Point(53, 0);
+            this.textBox71.MaxLength = 1;
             this.textBox71.Name = "textBox71";
             this.textBox71.Size = new System.Drawing.Size(50, 50);
             this.textBox71.TabIndex = 8;
@@ -1217,6 +1285,7 @@
             this.textBox72.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox72.ForeColor = System.Drawing.Color.Red;
             this.textBox72.Location = new System.Drawing.Point(3, 0);
+            this.textBox72.MaxLength = 1;
             this.textBox72.Name = "textBox72";
             this.textBox72.Size = new System.Drawing.Size(50, 50);
             this.textBox72.TabIndex = 9;
@@ -1247,6 +1316,7 @@
             this.textBox73.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox73.ForeColor = System.Drawing.Color.Red;
             this.textBox73.Location = new System.Drawing.Point(403, 0);
+            this.textBox73.MaxLength = 1;
             this.textBox73.Name = "textBox73";
             this.textBox73.Size = new System.Drawing.Size(50, 50);
             this.textBox73.TabIndex = 1;
@@ -1259,6 +1329,7 @@
             this.textBox74.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox74.ForeColor = System.Drawing.Color.Red;
             this.textBox74.Location = new System.Drawing.Point(353, 0);
+            this.textBox74.MaxLength = 1;
             this.textBox74.Name = "textBox74";
             this.textBox74.Size = new System.Drawing.Size(50, 50);
             this.textBox74.TabIndex = 2;
@@ -1271,6 +1342,7 @@
             this.textBox75.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox75.ForeColor = System.Drawing.Color.Red;
             this.textBox75.Location = new System.Drawing.Point(303, 0);
+            this.textBox75.MaxLength = 1;
             this.textBox75.Name = "textBox75";
             this.textBox75.Size = new System.Drawing.Size(50, 50);
             this.textBox75.TabIndex = 3;
@@ -1283,6 +1355,7 @@
             this.textBox76.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox76.ForeColor = System.Drawing.Color.Red;
             this.textBox76.Location = new System.Drawing.Point(253, 0);
+            this.textBox76.MaxLength = 1;
             this.textBox76.Name = "textBox76";
             this.textBox76.Size = new System.Drawing.Size(50, 50);
             this.textBox76.TabIndex = 4;
@@ -1295,6 +1368,7 @@
             this.textBox77.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox77.ForeColor = System.Drawing.Color.Red;
             this.textBox77.Location = new System.Drawing.Point(203, 0);
+            this.textBox77.MaxLength = 1;
             this.textBox77.Name = "textBox77";
             this.textBox77.Size = new System.Drawing.Size(50, 50);
             this.textBox77.TabIndex = 5;
@@ -1307,6 +1381,7 @@
             this.textBox78.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox78.ForeColor = System.Drawing.Color.Red;
             this.textBox78.Location = new System.Drawing.Point(153, 0);
+            this.textBox78.MaxLength = 1;
             this.textBox78.Name = "textBox78";
             this.textBox78.Size = new System.Drawing.Size(50, 50);
             this.textBox78.TabIndex = 6;
@@ -1319,6 +1394,7 @@
             this.textBox79.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox79.ForeColor = System.Drawing.Color.Red;
             this.textBox79.Location = new System.Drawing.Point(103, 0);
+            this.textBox79.MaxLength = 1;
             this.textBox79.Name = "textBox79";
             this.textBox79.Size = new System.Drawing.Size(50, 50);
             this.textBox79.TabIndex = 7;
@@ -1331,6 +1407,7 @@
             this.textBox80.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox80.ForeColor = System.Drawing.Color.Red;
             this.textBox80.Location = new System.Drawing.Point(53, 0);
+            this.textBox80.MaxLength = 1;
             this.textBox80.Name = "textBox80";
             this.textBox80.Size = new System.Drawing.Size(50, 50);
             this.textBox80.TabIndex = 8;
@@ -1343,6 +1420,7 @@
             this.textBox81.Font = new System.Drawing.Font("微软雅黑", 19.5F, System.Drawing.FontStyle.Bold);
             this.textBox81.ForeColor = System.Drawing.Color.Red;
             this.textBox81.Location = new System.Drawing.Point(3, 0);
+            this.textBox81.MaxLength = 1;
             this.textBox81.Name = "textBox81";
             this.textBox81.Size = new System.Drawing.Size(50, 50);
             this.textBox81.TabIndex = 9;
@@ -1361,25 +1439,68 @@
             this.panel10.Controls.Add(this.panel2);
             this.panel10.Controls.Add(this.panel1);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(0, 28);
+            this.panel10.Enabled = false;
+            this.panel10.Location = new System.Drawing.Point(0, 79);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.panel10.Size = new System.Drawing.Size(472, 465);
+            this.panel10.Size = new System.Drawing.Size(472, 464);
             this.panel10.TabIndex = 11;
             // 
-            // 检验ToolStripMenuItem
+            // panel11
             // 
-            this.检验ToolStripMenuItem.Name = "检验ToolStripMenuItem";
-            this.检验ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.检验ToolStripMenuItem.Text = "检验";
-            this.检验ToolStripMenuItem.Click += new System.EventHandler(this.检验ToolStripMenuItem_Click);
+            this.panel11.Controls.Add(this.btn_check);
+            this.panel11.Controls.Add(this.btn_pause);
+            this.panel11.Controls.Add(this.label1);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 28);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(472, 51);
+            this.panel11.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Font = new System.Drawing.Font("华文琥珀", 23F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Fuchsia;
+            this.label1.Location = new System.Drawing.Point(351, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "000";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_pause
+            // 
+            this.btn_pause.Location = new System.Drawing.Point(12, 14);
+            this.btn_pause.Name = "btn_pause";
+            this.btn_pause.Size = new System.Drawing.Size(75, 25);
+            this.btn_pause.TabIndex = 1;
+            this.btn_pause.Text = "开始";
+            this.btn_pause.UseVisualStyleBackColor = true;
+            this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
+            // 
+            // btn_check
+            // 
+            this.btn_check.Location = new System.Drawing.Point(108, 14);
+            this.btn_check.Name = "btn_check";
+            this.btn_check.Size = new System.Drawing.Size(75, 25);
+            this.btn_check.TabIndex = 2;
+            this.btn_check.Text = "检验";
+            this.btn_check.UseVisualStyleBackColor = true;
+            this.btn_check.Click += new System.EventHandler(this.btn_check_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 493);
+            this.ClientSize = new System.Drawing.Size(472, 543);
             this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel11);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -1408,6 +1529,7 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1419,7 +1541,6 @@
         private System.Windows.Forms.ToolStripMenuItem 游戏ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 开始ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 重新开始ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 暂停ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
@@ -1515,7 +1636,11 @@
         private System.Windows.Forms.ToolStripMenuItem 初级ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 中级ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 高级ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 检验ToolStripMenuItem;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_check;
+        private System.Windows.Forms.Button btn_pause;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

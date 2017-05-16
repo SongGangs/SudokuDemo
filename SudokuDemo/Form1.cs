@@ -229,22 +229,19 @@ namespace SudokuDemo
         private void 初级ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RandomNull = 25;
-            SudoNull = GetOrginArray(Generate9Array(Generate3Aaary()));
-            ShowResultInSceen(SudoNull);
+            重新开始ToolStripMenuItem_Click(null, null);
         }
 
         private void 中级ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RandomNull = 36;
-            SudoNull = GetOrginArray(Generate9Array(Generate3Aaary()));
-            ShowResultInSceen(SudoNull);
+            重新开始ToolStripMenuItem_Click(null, null);
         }
 
         private void 高级ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RandomNull = 64;
-            SudoNull = GetOrginArray(Generate9Array(Generate3Aaary()));
-            ShowResultInSceen(SudoNull);
+            重新开始ToolStripMenuItem_Click(null, null);
         }
 
         private void 重新开始ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -252,6 +249,8 @@ namespace SudokuDemo
             SudoNull = GetOrginArray(Generate9Array(Generate3Aaary()));
             ShowResultInSceen(SudoNull);
             startTimer();
+            this.panel10.Enabled = true;
+            this.btn_pause.Text = "暂停";
         }
 
     
